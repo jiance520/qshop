@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.IShopcartDao" >
+  <resultMap id="BaseResultMap" type="com.entity.Shopcart" >
+    <id column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="LOGDATE" property="logdate" jdbcType="DATE" />
+    <result column="PRODUCTNUM" property="productnum" jdbcType="DECIMAL" />
+    <result column="PRODUCTID" property="productid" jdbcType="DECIMAL" />
+    <result column="VIPID" property="vipid" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, LOGDATE, PRODUCTNUM, PRODUCTID, VIPID
+  </sql>
+  <select id="SelectAllsameproduct" resultMap="BaseResultMap"  parameterType="java.lang.Long">
+    select VIPID,PRODUCTNUM from shopcart where productid = #{id}
+  </select>
+  <select id="Selectaaa" resultMap="BaseResultMap"  parameterType="com.entity.Shopcart">
+    select VIPID,PRODUCTNUM from shopcart where productid = #{productid,jdbcType=DECIMAL} and vipid = #{vipid,jdbcType=DECIMAL}
+  </select>
+  <select id="Selectnum" resultType="java.lang.Integer" parameterType="java.lang.Long">
+    select PRODUCTNUM from shopcart where productid = #{id} and vipid = #{id}
+  </select>
+  <select id="VipSelectAll" resultMap="BaseResultMap"  parameterType="java.lang.Long">
+    select * from shopcart where vipid = #{id}
+  </select>
+  <select id="selectOne" parameterType="java.lang.Long" resultType="com.entity.Shopcart">
+    select * from shopcart where productid =#{productid ,jdbcType=DECIMAL}
+  </select>
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select * from shopcart
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from QSHOP.SHOPCART
+    where ID= #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from QSHOP.SHOPCART
+    where  ID= #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="delete" parameterType="com.entity.Shopcart" >
+    delete from QSHOP.SHOPCART
+     where PRODUCTID = #{productid,jdbcType=DECIMAL} and VIPID =  #{vipid,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Shopcart" >
+    insert into QSHOP.SHOPCART (ID, LOGDATE, PRODUCTNUM, 
+      PRODUCTID, VIPID)
+    values (QSHOP_SHOPCART_SEQ.nextval,sysdate,1,
+      #{productid,jdbcType=DECIMAL}, #{vipid,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insert#{id,jdbcType=DECIMAL}Selective" parameterType="com.entity.Shopcart" >
+    insert into QSHOP.SHOPCART
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="logdate != null" >
+        LOGDATE,
+      </if>
+      <if test="productnum != null" >
+        PRODUCTNUM,
+      </if>
+      <if test="productid != null" >
+        PRODUCTID,
+      </if>
+      <if test="vipid != null" >
+        VIPID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="logdate != null" >
+        #{logdate,jdbcType=DATE},
+      </if>
+      <if test="productnum != null" >
+        #{productnum,jdbcType=DECIMAL},
+      </if>
+      <if test="productid != null" >
+        #{productid,jdbcType=DECIMAL},
+      </if>
+      <if test="vipid != null" >
+        #{vipid,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Shopcart" >
+    update QSHOP.SHOPCART
+    <set >
+      <if test="logdate != null" >
+        LOGDATE = #{logdate,jdbcType=DATE},
+      </if>
+      <if test="productnum != null" >
+        PRODUCTNUM = #{productnum,jdbcType=DECIMAL},
+      </if>
+      <if test="productid != null" >
+        PRODUCTID = #{productid,jdbcType=DECIMAL},
+      </if>
+      <if test="vipid != null" >
+        VIPID = #{vipid,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Shopcart" >
+    update QSHOP.SHOPCART
+    set LOGDATE = #{logdate,jdbcType=DATE},
+      PRODUCTNUM = #{productnum,jdbcType=DECIMAL},
+      PRODUCTID = #{productid,jdbcType=DECIMAL},
+      VIPID = #{vipid,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+
+  <!--修改数量-->
+  <update id="updateone" parameterType="com.entity.Shopcart" >
+    update QSHOP.SHOPCART
+    set  PRODUCTNUM = #{productnum}
+    where PRODUCTID = #{productid,jdbcType=DECIMAL} and VIPID =  #{vipid,jdbcType=DECIMAL}
+  </update>
+</mapper>

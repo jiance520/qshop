@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.IShoplogDao" >
+  <resultMap id="BaseResultMap" type="com.entity.Shoplog" >
+    <id column="LOGID" property="logid" jdbcType="DECIMAL" />
+    <result column="LOGCONTENT" property="logcontent" jdbcType="VARCHAR" />
+    <result column="LOGTIME" property="logtime" jdbcType="DATE" />
+    <result column="USERID" property="userid" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    LOGID, LOGCONTENT, LOGTIME, USERID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from QSHOP.SHOPLOG
+    where LOGID = #{logid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from QSHOP.SHOPLOG
+    where LOGID = #{logid,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Shoplog" >
+    insert into QSHOP.SHOPLOG (LOGID, LOGCONTENT, LOGTIME, 
+      USERID)
+    values (#{logid,jdbcType=DECIMAL}, #{logcontent,jdbcType=VARCHAR}, #{logtime,jdbcType=DATE}, 
+      #{userid,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Shoplog" >
+    insert into QSHOP.SHOPLOG
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="logid != null" >
+        LOGID,
+      </if>
+      <if test="logcontent != null" >
+        LOGCONTENT,
+      </if>
+      <if test="logtime != null" >
+        LOGTIME,
+      </if>
+      <if test="userid != null" >
+        USERID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="logid != null" >
+        #{logid,jdbcType=DECIMAL},
+      </if>
+      <if test="logcontent != null" >
+        #{logcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="logtime != null" >
+        #{logtime,jdbcType=DATE},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Shoplog" >
+    update QSHOP.SHOPLOG
+    <set >
+      <if test="logcontent != null" >
+        LOGCONTENT = #{logcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="logtime != null" >
+        LOGTIME = #{logtime,jdbcType=DATE},
+      </if>
+      <if test="userid != null" >
+        USERID = #{userid,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where LOGID = #{logid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Shoplog" >
+    update QSHOP.SHOPLOG
+    set LOGCONTENT = #{logcontent,jdbcType=VARCHAR},
+      LOGTIME = #{logtime,jdbcType=DATE},
+      USERID = #{userid,jdbcType=DECIMAL}
+    where LOGID = #{logid,jdbcType=DECIMAL}
+  </update>
+</mapper>

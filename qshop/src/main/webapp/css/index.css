@@ -1,0 +1,118 @@
+
+.n1{
+     padding-top: 15px;
+    }
+.n2{
+    padding-top: 15px;
+    }
+.bg1{
+  	background-color: #C10000;
+    }
+  
+.bg1 li{
+   	padding-left:30px;
+   	padding-right:30px;
+   }
+   
+.bg1 a{
+  	font: normal 18px/36px 黑体;
+  	color: #FFFFFF;
+  }
+           .carousel-indicators li {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 1px;
+            text-indent: -999px;
+            cursor: pointer;
+            background-color:#959595;
+            border-radius: 10px;
+            border: none;
+        }
+        .carousel-indicators .active {
+            width: 12px;
+            height: 12px;
+            margin: 0;
+            background-color: #97C12A;     /* 覆盖插件里圆圈的颜色*/
+        }
+        .s1{
+        	border: 2px solid #F3F3F3;
+        	border-top: 4px solid #AFAFAF;
+        }
+        .s2 {
+        	border-right: 1px solid #F1F1F1;
+        	position: relative;
+        	right: 50px;
+        	height: 98px;
+        	margin-top: 5px;
+        }
+        .l1 li{
+        	margin-top: 5px;
+        }
+        .sl{
+        	border: 1px solid #FDB554;
+        	background-color: #FFFFCC;
+        	margin-bottom: 10px;
+        	
+        }
+        .sl span{
+        	font:bold 12px/25px "宋体";
+        	color: #FF0409;
+        }
+        .s{
+        	margin-top: 20px;
+        }
+        .thumbnail{
+        	height: 263px;
+        	
+        }
+        .caption span{
+        	color: #FF0000;
+        	font: bold 16px/20px "宋体";
+        }
+        .caption img,span{
+        	vertical-align: middle;
+        	margin: 5px;
+        }
+        
+        .f1{
+        	height: 170px;
+        	border: 2px solid #F5F5F5;
+        	background-color:#FAFAFA ;
+        }
+        .u1{
+        	border-right: 1px dashed #9C9C9C;
+        	height: 150px;
+        	margin-top: 5px;
+        }
+        .list-group{
+        	margin-left: 40px;
+        }
+        .list-group li{
+        	border: none;
+        	background-color:#FAFAFA ;
+        }
+        .list-group-item:nth-of-type(1){
+        	font: bold 16px/20px "宋体";
+        	color: #000000;
+        }
+        .list-group-item{
+        	color: #9C9C9C;
+        }
+        .l2{
+        	margin-top: 20px;
+        	height: 100px;
+        	text-align: center;
+        }
+        .l3{
+        	margin-top: 20px;
+        	color: #9C9C9C;
+        }
+        .l3 li a{
+        	color: #9C9C9C;
+        	text-decoration: underline;
+        }
+        .qq{
+        	position: relative;
+        	left:-15px ;
+        }

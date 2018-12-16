@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.IExpressDao" >
+  <resultMap id="BaseResultMap" type="com.entity.Express" >
+    <id column="EID" property="eid" jdbcType="DECIMAL" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="FAX" property="fax" jdbcType="VARCHAR" />
+    <result column="LOGDATE" property="logdate" jdbcType="DATE" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="PRICE" property="price" jdbcType="FLOAT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    EID, ADDRESS, FAX, LOGDATE, NAME, PHONE, PRICE
+  </sql>
+  <select id="selectOne" parameterType="java.lang.String" resultType="com.entity.Express">
+    select * from express where name = #{name}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    SELECT * FROM EXPRESS
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from QSHOP.EXPRESS
+    where EID = #{eid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from QSHOP.EXPRESS
+    where EID = #{eid,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Express" >
+    insert into QSHOP.EXPRESS (EID, ADDRESS, FAX, 
+      LOGDATE, NAME, PHONE, 
+      PRICE)
+    values (#{eid,jdbcType=DECIMAL}, #{address,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, 
+      #{logdate,jdbcType=DATE}, #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{price,jdbcType=FLOAT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Express" >
+    insert into QSHOP.EXPRESS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="eid != null" >
+        EID,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="fax != null" >
+        FAX,
+      </if>
+      <if test="logdate != null" >
+        LOGDATE,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="price != null" >
+        PRICE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="eid != null" >
+        #{eid,jdbcType=DECIMAL},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null" >
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="logdate != null" >
+        #{logdate,jdbcType=DATE},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=FLOAT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Express" >
+    update QSHOP.EXPRESS
+    <set >
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null" >
+        FAX = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="logdate != null" >
+        LOGDATE = #{logdate,jdbcType=DATE},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        PRICE = #{price,jdbcType=FLOAT},
+      </if>
+    </set>
+    where EID = #{eid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Express" >
+    update QSHOP.EXPRESS
+    set ADDRESS = #{address,jdbcType=VARCHAR},
+      FAX = #{fax,jdbcType=VARCHAR},
+      LOGDATE = #{logdate,jdbcType=DATE},
+      NAME = #{name,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      PRICE = #{price,jdbcType=FLOAT}
+    where EID = #{eid,jdbcType=DECIMAL}
+  </update>
+</mapper>

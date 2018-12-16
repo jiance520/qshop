@@ -1,0 +1,128 @@
+		 .n1{
+         	padding-top: 15px;
+        }
+        .n2{
+        	padding-top: 15px;
+        }
+        .bg1{
+      	background-color: #C10000;
+        }
+      
+       .bg1 li{
+       	padding-left:30px;
+       	padding-right:30px;
+       }
+       
+      .bg1 a{
+      	font: normal 18px/36px 黑体;
+      	color: #FFFFFF;
+      }
+      .img1 li{
+			border: 2px solid #CCCCCC;
+			position: relative;
+			left: 140px;
+		}
+		.img1 img{
+			height: 80px;
+			width:70px;
+		}
+		.caption li img:hover{
+			transform:rotate(360deg) scale(5.0);
+			position: relative;
+			bottom: 240px;
+		}
+		.ll li{
+			border: none;
+			height: 60px;
+			font: normal 15px/60px "宋体"; 
+			color: #000000;
+		}
+		.ll li:nth-of-type(1){
+			font: bold 20px/20px "宋体";
+			border-bottom:4px solid #FF0000; 
+		}
+		.s1{
+			border:1px solid #DADADA; ;
+		}
+		.r1{
+			padding-top: 10px;
+		}
+		.ms{
+			background-color: #EFEFEF;
+			font: bold 15px/35px "宋体";
+			width: 1138px;
+			margin-left: 16px;
+			margin-top: 10px;
+		
+		}
+		.y{
+			
+			white-space : normal;
+			margin-left: 1px;
+		}
+		.x{
+			border-bottom: 1px dashed #EFEFEF ;
+			height: 75px;
+		}
+		.y1{
+			background-color: #EFEFEF;
+			height: 75px;
+			font: normal 15px "宋体";
+		}
+		.y2{
+			margin-top: 10px;
+			border-bottom:1px dashed #EFEFEF;
+			height: 50px;
+		}
+		.y2 span{
+			font: bold 15px/25px "宋体";
+			color: #FC9940;
+		}
+		
+		.f1{
+        	height: 170px;
+        	border: 2px solid #F5F5F5;
+        	background-color:#FAFAFA ;
+        	margin-top: 10px;
+        }
+        .u1{
+        	border-right: 1px dashed #9C9C9C;
+        	height: 150px;
+        	margin-top: 5px;
+        	
+        }
+        .ul li{
+        	text-align: center;
+        }
+        .list-group{
+        	margin-left: 40px;
+        }
+        .list-group li{
+        	border: none;
+        	background-color:#FAFAFA ;
+        }
+        .list-group-item:nth-of-type(1){
+        	font: bold 16px/20px "宋体";
+        	color: #000000;
+        }
+        .list-group-item{
+        	color: #9C9C9C;
+        }
+        .l2{
+        	margin-top: 20px;
+        	height: 100px;
+        	text-align: center;
+        }
+        .l3{
+        	margin-top: 20px;
+        	color: #9C9C9C;
+        }
+        .l3 li a{
+        	color: #9C9C9C;
+        	text-decoration: underline;
+        }
+         .qq{
+        	position: relative;
+        	left:-15px ;
+        }
+   

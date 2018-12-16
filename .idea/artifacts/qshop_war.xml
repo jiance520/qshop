@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="qshop:war">
+    <output-path>$PROJECT_DIR$/qshop/target</output-path>
+    <root id="archive" name="qshop.war">
+      <element id="artifact" artifact-name="qshop:war exploded" />
+    </root>
+  </artifact>
+</component>

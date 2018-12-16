@@ -1,0 +1,121 @@
+		 .n1{
+         	padding-top: 15px;
+        }
+        .n2{
+        	padding-top: 15px;
+        }
+        .n3{
+        	position: relative;
+        	right: 15px;
+        }
+        .bg1{
+      	background-color: #C10000;
+        }
+      
+       .bg1 li{
+       	padding-left:30px;
+       	padding-right:30px;
+       }
+       
+      .bg1 a{
+      	font: normal 18px/36px 黑体;
+      	color: #FFFFFF;
+      }
+      .c1{
+      	border: 1px solid #F2F2F2;
+      }
+      .t1{
+      	background-image: url(../img/resources/cartnav-bg.gif);
+      	background-repeat-y:10px ;
+      	position: relative;
+      	right: 100px;
+      	height: 50px;
+      	width: 290px;
+      }
+      .t2 img{
+      	position: relative;
+      	right: 80px;
+      }
+      		.hh{
+			 border-bottom: 2px solid #808080;
+			 width: 960px;
+			 margin-left: 40px;
+			 font: bold 15px/30px "宋体";
+			 margin-bottom: 10px;
+			}
+			.hh1{
+				width: 1000px;
+				margin-left: 40px;
+				margin-bottom: 5px;
+			}
+			.fc span{
+				position: relative;
+				top: 4px;
+				left:10px ;
+			}
+			.hh2{
+			 border-bottom: 2px solid #00CC33;
+			 width: 1000px;
+			 margin-left: 40px;
+			 font: bold 15px/30px "宋体";
+			 margin-bottom: 10px;
+			 margin-top: 25px;
+			}
+			.x{
+			border-bottom: 1px dashed #EFEFEF ;
+			height: 30px;
+			}
+			.y1{
+			background-color: #EFEFEF;
+			height: 30px;
+			font: normal 15px/30px "宋体";
+			}
+			.cc{
+				width: 1000px;
+				margin-left: 45px;
+			}
+			.hh3{
+			 border-bottom: 2px solid #FF0000;
+			 width: 1000px;
+			 margin-left: 40px;
+			 font: bold 15px/30px "宋体";
+			 margin-bottom: 10px;
+			 margin-top: 25px;
+			}
+			.hh4{
+			 border-bottom: 2px solid #5B9CDA;
+			 width: 1000px;
+			 margin-left: 40px;
+			 font: bold 15px/30px "宋体";
+			 margin-bottom: 10px;
+			 margin-top: 25px;
+			}	
+			.l{	
+			border: 1px solid #5B9CDA;
+			margin-right: 20px;
+			width:890px;
+			margin-bottom: 20px;
+			}
+			.hh5{
+				width: 1000px;
+				margin-bottom: 10px;
+				 margin-left: 40px;
+			    margin-top: 15px;
+			}	
+			.l2{
+        	margin-top: 10px;
+        	height: 100px;
+        	text-align: center;
+        	}
+	        .l3{
+	        	margin-top: 20px;
+	        	color: #9C9C9C;
+	        	margin-right: 20px;
+	        }
+	        .l3 li a{
+	        	color: #9C9C9C;
+	        	text-decoration: underline;
+	        }	
+			#dg{
+				padding-top: 0px;
+			}

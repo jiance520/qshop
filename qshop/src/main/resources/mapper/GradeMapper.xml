@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.IGradeDao" >
+  <resultMap id="BaseResultMap" type="com.entity.Grade" >
+    <id column="GID" property="gid" jdbcType="DECIMAL" />
+    <result column="DISCOUNT" property="discount" jdbcType="DECIMAL" />
+    <result column="GRADETYPE" property="gradetype" jdbcType="VARCHAR" />
+    <result column="POINT" property="point" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    GID, DISCOUNT, GRADETYPE, POINT
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from QSHOP.GRADE
+    where GID = #{gid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from QSHOP.GRADE
+    where GID = #{gid,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.entity.Grade" >
+    insert into QSHOP.GRADE (GID, DISCOUNT, GRADETYPE, 
+      POINT)
+    values (#{gid,jdbcType=DECIMAL}, #{discount,jdbcType=DECIMAL}, #{gradetype,jdbcType=VARCHAR}, 
+      #{point,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.entity.Grade" >
+    insert into QSHOP.GRADE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="gid != null" >
+        GID,
+      </if>
+      <if test="discount != null" >
+        DISCOUNT,
+      </if>
+      <if test="gradetype != null" >
+        GRADETYPE,
+      </if>
+      <if test="point != null" >
+        POINT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="gid != null" >
+        #{gid,jdbcType=DECIMAL},
+      </if>
+      <if test="discount != null" >
+        #{discount,jdbcType=DECIMAL},
+      </if>
+      <if test="gradetype != null" >
+        #{gradetype,jdbcType=VARCHAR},
+      </if>
+      <if test="point != null" >
+        #{point,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Grade" >
+    update QSHOP.GRADE
+    <set >
+      <if test="discount != null" >
+        DISCOUNT = #{discount,jdbcType=DECIMAL},
+      </if>
+      <if test="gradetype != null" >
+        GRADETYPE = #{gradetype,jdbcType=VARCHAR},
+      </if>
+      <if test="point != null" >
+        POINT = #{point,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where GID = #{gid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.entity.Grade" >
+    update QSHOP.GRADE
+    set DISCOUNT = #{discount,jdbcType=DECIMAL},
+      GRADETYPE = #{gradetype,jdbcType=VARCHAR},
+      POINT = #{point,jdbcType=DECIMAL}
+    where GID = #{gid,jdbcType=DECIMAL}
+  </update>
+</mapper>
